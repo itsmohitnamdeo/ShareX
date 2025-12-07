@@ -35,12 +35,11 @@ app.use('/api/users', userRoutes);
 
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
-const PORT = process.env.PORT || 4000;
-
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log(`✅ MongoDB connected successfully`))
   .catch(err => console.log(`❌ MongoDB connection error: ${err.message}`));
 
-app.listen(PORT, () => {
-  console.log(`🚀 Backend server running at http://localhost:${PORT}`);
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`🚀 Backend server running on port ${PORT}`);
 });
