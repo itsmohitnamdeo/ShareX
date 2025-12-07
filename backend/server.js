@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const fs = require('fs');
+const cors = require('cors');
 
 const authRoutes = require('./src/routes/auth');
 const fileRoutes = require('./src/routes/files');
@@ -13,27 +14,34 @@ if (!fs.existsSync(UPLOAD_DIR)) fs.mkdirSync(UPLOAD_DIR, { recursive: true });
 
 const app = express();
 app.use(express.json());
-const cors = require('cors');
 
 const allowedOrigins = [
   'http://localhost:3000',
-  'https://sharex-euhl.onrender.com',
+  'https://share-x-j1r7.vercel.app',   
 ];
+
 app.use(cors({
-  origin: function (origin, callback) {
-    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
-      callback(new Error('Not allowed by CORS'));
+      callback(new Error(`❌ CORS Blocked Origin: ${origin}`));
     }
   },
   credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
 }));
+
+app.options('*', cors());
+
+
 app.use('/api/auth', authRoutes);
 app.use('/api/files', fileRoutes);
 app.use('/api/users', userRoutes);
 
 app.use('/public', express.static(path.join(__dirname, 'public')));
+
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log(`✅ MongoDB connected successfully`))
