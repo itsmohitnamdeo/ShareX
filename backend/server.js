@@ -14,7 +14,22 @@ if (!fs.existsSync(UPLOAD_DIR)) fs.mkdirSync(UPLOAD_DIR, { recursive: true });
 const app = express();
 app.use(express.json());
 const cors = require('cors');
-app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
+const cors = require('cors');
+
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://sharex-euhl.onrender.com',
+];
+app.use(cors({
+  origin: function (origin, callback) {
+    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+}));
 app.use('/api/auth', authRoutes);
 app.use('/api/files', fileRoutes);
 app.use('/api/users', userRoutes);
