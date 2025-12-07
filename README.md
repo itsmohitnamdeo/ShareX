@@ -46,6 +46,10 @@ users - Anyone with the link - Expiration time
 
 # 📦 Installation
 
+```bash
+# Clone the repository
+git clone https://github.com/itsmohitnamdeo/ShareX.git
+
 ## Backend Setup
 
     cd backend
