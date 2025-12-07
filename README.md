@@ -127,7 +127,7 @@ Public: true
 
 -   Strong backend enforcement
 -   No direct file access
--   Expiring tokens\
+-   Expiring tokens
 -   Prevents unauthorized downloads
 
 ------------------------------------------------------------------------
