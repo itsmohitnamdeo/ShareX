@@ -17,31 +17,32 @@ app.use(express.json());
 
 const allowedOrigins = [
   'http://localhost:3000',
-  'https://share-x-j1r7.vercel.app',   
+  'https://share-x-j1r7.vercel.app'
 ];
 
 app.use(cors({
   origin: (origin, callback) => {
     if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error(`❌ CORS Blocked Origin: ${origin}`));
+      return callback(null, true);
     }
+    return callback(new Error(`❌ CORS Blocked Origin: ${origin}`));
   },
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
 }));
 
-app.options('*', cors());
 
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
+  next();
+});
 
 app.use('/api/auth', authRoutes);
 app.use('/api/files', fileRoutes);
 app.use('/api/users', userRoutes);
 
 app.use('/public', express.static(path.join(__dirname, 'public')));
-
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log(`✅ MongoDB connected successfully`))
