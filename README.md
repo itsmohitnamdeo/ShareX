@@ -31,7 +31,7 @@ It supports:
 
 ### ✔ **File Upload**
 
--   Validate file type + size\
+-   Validate file type + size
 -   Only logged-in users can upload
 
 ### ✔ **Share With Specific Users**
@@ -92,8 +92,8 @@ Start frontend:
 
 ### Files
 
-`POST /api/files/upload`\
-`GET /api/files`\
+`POST /api/files/upload`
+`GET /api/files`
 `GET /api/files/:id/download`
 
 ### Share With Users
@@ -102,7 +102,7 @@ Start frontend:
 
 ### Create Share Link
 
-`POST /api/files/:id/link`\
+`POST /api/files/:id/link`
 `GET /api/files/link/:token`
 
 
@@ -125,8 +125,8 @@ Public: true
 
 # 🛡 Security Highlights
 
--   Strong backend enforcement\
--   No direct file access\
+-   Strong backend enforcement
+-   No direct file access
 -   Expiring tokens\
 -   Prevents unauthorized downloads
 
@@ -135,9 +135,9 @@ Public: true
 # 🏁 Conclusion
 
 This system replicates Google Drive--like secure sharing with: ✔ Strong
-access rules\
-✔ User + Link permissions\
-✔ Secure backend\
+access rules
+✔ User + Link permissions
+✔ Secure backend
 ✔ Clean frontend UI
 
 ------------------------------------------------------------------------
