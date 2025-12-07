@@ -57,10 +57,13 @@ git clone https://github.com/itsmohitnamdeo/ShareX.git
 
 Create `.env`:
 
+    PORT=4000
     MONGO_URI=mongodb://localhost:27017/securefiles
     JWT_SECRET=your_jwt_secret
     BASE_URL=http://localhost:3000
-    PORT=5000
+    MAX_FILE_SIZE=10485760   # 10MB default
+    UPLOAD_DIR=./uploads
+
 
 Start backend:
 
