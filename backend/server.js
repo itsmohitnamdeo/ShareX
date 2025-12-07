@@ -14,7 +14,6 @@ if (!fs.existsSync(UPLOAD_DIR)) fs.mkdirSync(UPLOAD_DIR, { recursive: true });
 const app = express();
 app.use(express.json());
 const cors = require('cors');
-const cors = require('cors');
 
 const allowedOrigins = [
   'http://localhost:3000',
