@@ -49,7 +49,7 @@ users - Anyone with the link - Expiration time
 ```bash
 # Clone the repository
 git clone https://github.com/itsmohitnamdeo/ShareX.git
-
+```
 ## Backend Setup
 
     cd backend
@@ -141,13 +141,16 @@ access rules\
 
 ## images
 
+<img width="1366" height="543" alt="ShareX" src="https://github.com/user-attachments/assets/f86faaad-e551-4825-8ebb-ba9eb7fcf315" />
+
+<img width="1366" height="662" alt="share" src="https://github.com/user-attachments/assets/34120348-6441-4367-ad28-97c638dffa21" />
 
 
 ------------------------------------------------------------------------
 
 ## Contact
 
-If you have any questions, suggestions, or need assistance related to the MicroTools, feel free to reach out to Me.
+If you have any questions, suggestions, or need assistance related to the ShareX, feel free to reach out to Me.
 
 - MailId - namdeomohit198@gmail.com
 - Mob No. - 9131552292
