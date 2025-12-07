@@ -1,0 +1,83 @@
+body, html { margin:0; font-family:'Poppins',sans-serif; }
+.dashboard-container { padding:30px; background:linear-gradient(135deg,#4c6ef5,#8a4fff); min-height:100vh; color:#fff; }
+.dashboard-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:25px; }
+.logout-btn { padding:10px 20px; background:linear-gradient(135deg,#ff5f7e,#ff8c42); border:none; border-radius:16px; cursor:pointer; font-weight:600; transition:0.3s; }
+.logout-btn:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(255,95,126,0.5); }
+.dashboard-header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 20px;
+  background: linear-gradient(90deg, #4e54c8, #8f94fb);
+  color:#fff;
+  border-bottom:1px solid #ccc;
+  position: relative;
+}
+
+.header-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  font-weight:700;
+}
+
+.header-left { display:flex; align-items:center; gap:20px; }
+
+.user-card {
+  display:flex; align-items:center;
+  background: rgba(255,255,255,0.15);
+  padding:6px 10px; border-radius:12px;
+  gap:10px; box-shadow:0 3px 8px rgba(0,0,0,0.2);
+}
+
+.user-avatar {
+  width:40px; height:40px;
+  border-radius:50%; object-fit:cover;
+  border:2px solid #fff;
+}
+
+.user-info { display:flex; flex-direction:column; }
+.user-name { font-weight:600; font-size:14px; }
+.user-email { font-size:12px; opacity:0.8; }
+.logout-btn {
+  padding:6px 12px; border:none; border-radius:6px;
+  background:#d9534f; color:#fff; cursor:pointer;
+  transition:0.2s;
+}
+
+.logout-btn:hover { transform:translateY(-2px); box-shadow:0 4px 10px rgba(0,0,0,0.3); }
+.files-section { margin-top:30px; }
+.files-section h2 { margin-bottom:15px; font-size:22px; text-shadow:1px 1px 4px rgba(0,0,0,0.3); }
+.table-wrapper { overflow-x:auto; }
+.file-table { width:100%; border-collapse:separate; border-spacing:0; background:rgba(255,255,255,0.1); border-radius:12px; overflow:hidden; }
+.file-table th, .file-table td { padding:12px 16px; text-align:left; }
+.file-table th { background:rgba(255,255,255,0.2); font-weight:600; }
+.file-table tr { border-bottom:1px solid rgba(255,255,255,0.2); }
+.file-table tr:nth-child(even){ background: rgba(255,255,255,0.05); }
+.file-table tr:last-child { border-bottom:none; }
+.actions-cell { display:flex; gap:8px; flex-wrap:wrap; }
+.action-btn { padding:6px 10px; border-radius:8px; border:none; cursor:pointer; font-size:13px; font-weight:500; transition:0.3s; }
+.action-btn.share { background:#ffa500;color:#fff; }
+.action-btn.download { background:#4caf50;color:#fff; }
+.action-btn.audit { background:#1e90ff;color:#fff; }
+.action-btn.view { background:#ff69b4;color:#fff; }
+.action-btn:hover { transform:translateY(-2px); box-shadow:0 4px 15px rgba(0,0,0,0.3); }
+.action-btn.delete { background:#ff4c4c;color:#fff; }
+.action-btn.delete:hover { transform:translateY(-2px); box-shadow:0 4px 15px rgba(255,0,0,0.5); }
+.audit-modal { max-width:900px; width:95%; }
+.audit-table-wrapper { max-height:400px; overflow:auto; margin-top:15px; }
+.audit-table { width:100%; border-collapse:collapse; }
+.audit-table th, .audit-table td { padding:10px; border-bottom:1px solid rgba(255,255,255,0.2); color:#fff; text-align:left; }
+.audit-table th { background:rgba(255,255,255,0.2); font-weight:600; }
+.audit-meta { background:rgba(0,0,0,0.3); padding:6px; border-radius:8px; overflow:auto; max-height:100px; }
+.modal-overlay { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); display:flex; justify-content:center; align-items:center; z-index:1000; }
+.modal-content { background:rgba(255,255,255,0.1); padding:20px; border-radius:16px; max-width:800px; width:90%; backdrop-filter:blur(12px); color:#fff; text-align:center; }
+.close-btn { margin-top:15px; padding:10px 20px; border:none; border-radius:12px; background:#ff5f7e; color:#fff; cursor:pointer; font-weight:600; }
+.close-btn:hover { transform:translateY(-2px); box-shadow:0 6px 15px rgba(255,95,126,0.5); }
+.text-preview { max-height:500px; overflow:auto; text-align:left; padding:10px; background:rgba(0,0,0,0.3); border-radius:12px; }
+
+@media(max-width:768px){
+  .dashboard-header{flex-direction:column;gap:15px;}
+  .file-table th,.file-table td{padding:10px 12px;}
+}
